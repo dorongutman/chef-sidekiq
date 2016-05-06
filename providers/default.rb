@@ -128,6 +128,7 @@ action :create do
       cookbook 'sidekiq'
       owner new_resource.owner if new_resource.owner
       group new_resource.group if new_resource.group
+      env new_resource.env if new_resource.env
       options(
         :pidfile => pidfile,
         :sidekiq_config => sidekiq_config,
